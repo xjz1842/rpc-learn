@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rpcClient="http://www.rpc.com/schema/reference"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.rpc.com/schema/reference http://www.rpc.com/schema/reference.xsd">
+
+
+    <!-- 引入远程服务 -->
+    <rpcClient:reference id="helloService"
+                          interface="com.simple.rpc.framework.test.HelloService"
+                          clusterStrategy="WeightRandom"
+                          remoteAppKey="ares"
+                          groupName="default"
+                          timeout="3000"/>
+
+</beans>

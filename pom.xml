@@ -12,22 +12,52 @@
     <modules>
         <module>distribute-lock</module>
         <module>socket-rpc</module>
+        <module>serialization</module>
+        <module>service-invoker</module>
+        <module>register</module>
+        <module>transport</module>
+        <module>rpc-all</module>
     </modules>
 
     <properties>
-        <zookeeper.version>3.4.6</zookeeper.version>
+        <zookeeper.version>3.4.8</zookeeper.version>
         <curator-framework.version>4.0.0</curator-framework.version>
         <curator-client.version>4.0.0</curator-client.version>
         <curator-recipes.version>4.0.0</curator-recipes.version>
+        <zkclient.version>0.10</zkclient.version>
+        <vertx.version>3.0.0</vertx.version>
+        <kyro.version>4.0.1</kyro.version>
+        <hessian.version>4.0.51</hessian.version>
+        <protostuff.version>1.0.9</protostuff.version>
+        <objenesis.version>2.1</objenesis.version>
+        <fastjson.version>1.2.28</fastjson.version>
+        <netty.version>4.1.19.Final</netty.version>
+        <slf4j.version>1.7.10</slf4j.version>
+        <common.lang.version>3.3.1</common.lang.version>
+        <common.collection.version>3.2.1</common.collection.version>
+        <guava.version>21.0</guava.version>
+        <spring.version>4.0.9.RELEASE</spring.version>
+        <aspectj.version>1.8.0</aspectj.version>
     </properties>
 
     <dependencyManagement>
+
         <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.4.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
                 <version>${zookeeper.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
@@ -43,6 +73,80 @@
                 <artifactId>curator-recipes</artifactId>
                 <version>${curator-recipes.version}</version>
             </dependency>
+
+           <!-- zookeeper client-->
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kyro.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>${hessian.version}</version>
+            </dependency>
+
+            <!-- Protostuff -->
+            <dependency>
+                <groupId>com.dyuproject.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dyuproject.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+            <!-- Objenesis -->
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>${objenesis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${common.lang.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${common.collection.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

@@ -1,0 +1,2 @@
+http\://www.rpc.com/schema/service=com.simple.rpc.framework.spring.RemoteServiceNamespaceHandler
+http\://www.rpc.com/schema/reference=com.simple.rpc.framework.spring.ReferenceNamespaceHandler
