@@ -20,7 +20,7 @@
     </modules>
 
     <properties>
-        <zookeeper.version>3.4.8</zookeeper.version>
+        <zookeeper.version>3.4.14</zookeeper.version>
         <curator-framework.version>4.0.0</curator-framework.version>
         <curator-client.version>4.0.0</curator-client.version>
         <curator-recipes.version>4.0.0</curator-recipes.version>
